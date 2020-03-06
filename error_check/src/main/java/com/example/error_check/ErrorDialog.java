@@ -3,6 +3,7 @@ package com.example.error_check;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
@@ -13,25 +14,21 @@ import android.widget.TextView;
 import com.airbnb.lottie.LottieAnimationView;
 
 public class ErrorDialog extends Dialog {
-    public Activity activity;
+    private Activity activity;
     private String lblHeading = "ERROR OCCURRED", lblSubtext = "It seem's that some error have been occurred", lottie = "error1.json";
     private TextView heading, subtext;
     private Button retryButton, canclButton;
     private LottieAnimationView lottieAnimationView;
     private RelativeLayout relativeLayout;
 
-    private int dialogColor;
-    private int buttonColor=getContext().getColor(R.color.colorAccent);
-    private int buttonTextColor=getContext().getColor(R.color.white);
-    private int headingColor=getContext().getColor(R.color.white);
+    private int dialogColor= Color.parseColor("#008577");
+    private int buttonColor= Color.parseColor("#000000");
+    private int buttonTextColor=Color.parseColor("#ffffff");
+    private int headingColor=Color.parseColor("#ffffff");
 
 
     public ErrorDialog(Activity activity) {
         super(activity);
-        this.activity = activity;
-        this.lblHeading = lblHeading;
-        this.lblSubtext = lblSubtext;
-        this.lottie = lottie;
     }
 
     public ErrorDialog(Activity activity, String lblHeading, String lblSubtext, String lottie, int dialogColor) {
@@ -79,6 +76,7 @@ public class ErrorDialog extends Dialog {
     }
 
     private boolean isNetworkConnected() {
+
 
         ConnectivityManager cm = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
         return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
@@ -145,14 +143,6 @@ public class ErrorDialog extends Dialog {
         });
     }
 
-    public void init(){
-
-        dialogColor =getContext().getColor(R.color.colorPrimaryDark);
-        buttonColor=getContext().getColor(R.color.colorAccent);
-        buttonTextColor=getContext().getColor(R.color.white);
-        headingColor=getContext().getColor(R.color.white);
-
-    }
 
 }
 

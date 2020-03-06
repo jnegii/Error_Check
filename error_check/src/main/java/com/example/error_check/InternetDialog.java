@@ -2,6 +2,7 @@ package com.example.error_check;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,10 +20,10 @@ public class InternetDialog extends Dialog {
     private Button retryButton, canclButton;
     private LottieAnimationView lottieAnimationView;
     private RelativeLayout relativeLayout;
-    private int dialogColor = getContext().getColor(R.color.colorPrimaryDark);
-    private int buttonColor = getContext().getColor(R.color.colorAccent);
-    private int buttonTextColor=getContext().getColor(R.color.white);
-    private int headingColor=getContext().getColor(R.color.white);
+    private int dialogColor = Color.parseColor("#008577");
+    private int buttonColor = Color.parseColor("#000000");
+    private int buttonTextColor=Color.parseColor("#ffffff");
+    private int headingColor=Color.parseColor("#ffffff");
 
 
     public InternetDialog(Activity activity) {
