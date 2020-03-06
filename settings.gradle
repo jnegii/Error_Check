@@ -1,0 +1,2 @@
+include ':app', ':error_check'
+rootProject.name='Error_Check'
